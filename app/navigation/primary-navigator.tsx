@@ -9,7 +9,7 @@ import React from "react"
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 // import { WelcomeScreen, DemoScreen } from "../screens"
 import WelcomeScreen from '../screens/welcome-screen/welcome-screen'
-
+import SplashScreen from '../screens/hotstar/splashScreen'
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
  * as well as what properties (if any) they might take when navigating to them.
@@ -38,8 +38,8 @@ export function PrimaryNavigator() {
         gestureEnabled: true,
       }}
     >
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="welcome" component={WelcomeScreen} />
-      {/* <Stack.Screen name="demo" component={DemoScreen} /> */}
     </Stack.Navigator>
   )
 }
@@ -53,5 +53,5 @@ export function PrimaryNavigator() {
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ["welcome"]
+const exitRoutes = ["SplashScreen"]
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)
