@@ -118,7 +118,7 @@ class welcome extends Component{
   render(){
     return(
       <View>
-        <Text>Hello</Text>
+        <Text>Hello Yo</Text>
       </View>
     )
   }
