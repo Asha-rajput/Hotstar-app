@@ -9,6 +9,9 @@ import React from "react"
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 // import { WelcomeScreen, DemoScreen } from "../screens"
 import WelcomeScreen from '../screens/welcome-screen/welcome-screen'
+import splashscreen from '../screens/index'
+import SplashScreen from "react-native-splash-screen"
+
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -23,8 +26,9 @@ import WelcomeScreen from '../screens/welcome-screen/welcome-screen'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
-  welcome: undefined
-  demo: undefined
+  // welcome: undefined
+  // demo: undefined
+  splashscreen:undefined
 }
 
 // Documentation: https://github.com/software-mansion/react-native-screens/tree/master/native-stack
@@ -38,7 +42,9 @@ export function PrimaryNavigator() {
         gestureEnabled: true,
       }}
     >
-      <Stack.Screen name="welcome" component={WelcomeScreen} />
+      {/* <Stack.Screen name="welcome" component={WelcomeScreen} /> */}
+      <Stack.Screen name="splashScreen" component={SplashScreen} />
+
       {/* <Stack.Screen name="demo" component={DemoScreen} /> */}
     </Stack.Navigator>
   )
