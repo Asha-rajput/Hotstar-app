@@ -9,8 +9,15 @@ import React from "react"
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 // import { WelcomeScreen, DemoScreen } from "../screens"
 import WelcomeScreen from '../screens/welcome-screen/welcome-screen'
-import splashscreen from '../screens/index'
-import SplashScreen from "react-native-splash-screen"
+import splashscreen from '../screens/Hotstar/splashScreen'
+import GetStarted from '../screens/Hotstar/GetStarted'
+// import HomeScreen from '../screens/Hotstar/homeScreen'
+// import Header from '../screens/Hotstar/SubScreen/Header'
+import Drawer from '../screens/Hotstar/SubScreen/Drawer'
+
+
+
+// import SplashScreen from "react-native-splash-screen"
 
 
 /**
@@ -43,7 +50,12 @@ export function PrimaryNavigator() {
       }}
     >
       {/* <Stack.Screen name="welcome" component={WelcomeScreen} /> */}
-      <Stack.Screen name="splashScreen" component={SplashScreen} />
+      <Stack.Screen name="splashScreen" component={splashscreen} />
+      <Stack.Screen name="GetStarted" component={GetStarted} />
+      {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
+      {/* <Stack.Screen name="Header" component={Header} /> */}
+      <Stack.Screen name="Drawer" component={Drawer} />
+
 
       {/* <Stack.Screen name="demo" component={DemoScreen} /> */}
     </Stack.Navigator>

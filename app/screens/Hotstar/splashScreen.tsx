@@ -5,7 +5,7 @@ class splashscreen extends React.Component {
   constructor(props) {
     super(props);
     setTimeout(() => {
-    //   this.props.navigation.navigate('getstarted')
+      this.props.navigation.navigate('GetStarted')
     }, 1500)
 
 
