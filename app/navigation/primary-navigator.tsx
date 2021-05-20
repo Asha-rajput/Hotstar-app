@@ -35,7 +35,7 @@ import Drawer from '../screens/Hotstar/SubScreen/Drawer'
 export type PrimaryParamList = {
   // welcome: undefined
   // demo: undefined
-  splashscreen:undefined
+  splashscreen: undefined
 }
 
 // Documentation: https://github.com/software-mansion/react-native-screens/tree/master/native-stack
@@ -47,17 +47,10 @@ export function PrimaryNavigator() {
       screenOptions={{
         headerShown: false,
         gestureEnabled: true,
-      }}
-    >
-      {/* <Stack.Screen name="welcome" component={WelcomeScreen} /> */}
+      }}>
       <Stack.Screen name="splashScreen" component={splashscreen} />
       <Stack.Screen name="GetStarted" component={GetStarted} />
-      {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
-      {/* <Stack.Screen name="Header" component={Header} /> */}
       <Stack.Screen name="Drawer" component={Drawer} />
-
-
-      {/* <Stack.Screen name="demo" component={DemoScreen} /> */}
     </Stack.Navigator>
   )
 }

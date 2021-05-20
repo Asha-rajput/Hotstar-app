@@ -4,15 +4,14 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerScreen from './DrawerScreen'
 import HomeScreen from '../homeScreen'
-
+import MyTabs from './TabNavigation'
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={() => <DrawerScreen />}>
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
-      {/* <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
+      <Drawer.Screen name="HomeScreen" component={MyTabs} />
     </Drawer.Navigator>
   );
 }
