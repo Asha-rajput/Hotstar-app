@@ -28,7 +28,7 @@ export default function MyTabs() {
             tabBarPosition={'bottom'}
             tabBarOptions={{
                 activeTintColor: 'white',
-                labelStyle: { fontSize: 10, borderBottomWidth: 0 },
+                labelStyle: {  textTransform: 'none' ,fontSize: 10, borderBottomWidth: 0 },
                 // style: { backgroundColor: 'powderblue' ,borderWidth:0,borderBottomColor:'transparent',elevation:0},
                 showIcon: true,
                 tabStyle: { backgroundColor: '#121926', borderWidth: 0, borderBottomColor: 'transparent' },
@@ -47,7 +47,7 @@ export default function MyTabs() {
 
             <TabBottom.Screen name="TvScreen" component={TvScreen}
                 options={{
-                    tabBarLabel: 'Tv',
+                    tabBarLabel: 'TV',
                     tabBarIcon: ({ color }) => (
                         <MaterialIcons name="live-tv" color={color} size={24} />
                     ),
