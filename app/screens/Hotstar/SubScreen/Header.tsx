@@ -9,7 +9,7 @@ export default class HeaderMultipleIconExample extends Component {
     
     render() {
         return (
-            <Container style={{flex: 1}}>
+            // <Container style={{backgroundColor:'red'}}>
                 <Header style={{ backgroundColor: '#121926' }}>
                     <Left style={{ flex: 0.5 }}>
                         <Menu {...this.props} />
@@ -35,7 +35,7 @@ export default class HeaderMultipleIconExample extends Component {
                         </TouchableOpacity>
                     </Right>
                 </Header>
-            </Container >
+            // </Container >
         );
     }
 }
