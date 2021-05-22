@@ -81,7 +81,7 @@ class homeScreen extends React.Component {
                         <Text style={textLabelStyle}>Popular Movies</Text>
                         <ContinueWatching trandingMovie={trandingMovie} {...this.props} />
 
-                        <Text style={textLabelStyle}>Popular TV Shows</Text>
+                        <Text style={textLabelStyle}>Popular TV</Text>
                         <ContinueWatching trandingMovie={trandingTV} {...this.props} />
 
                         <Text style={textLabelStyle}>Discover Movies</Text>
