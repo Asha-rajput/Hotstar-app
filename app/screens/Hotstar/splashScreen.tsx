@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { View, Text } from "react-native"
+import { View, Image } from "react-native"
 class SplashScreen extends Component {
     componentDidMount() {
         setTimeout(() => {
@@ -9,8 +9,12 @@ class SplashScreen extends Component {
     render() {
         console.log(this.props)
         return (
-            <View>
-                <Text>SplashScreen Yo</Text>
+            <View style={{ flex: 1 }}>
+                <Image resizeMode={'stretch'} style={{
+                    flex: 1,
+                    width: null,
+                    height: null
+                }} source={require('../Hotstar/hotstar.jpg')} />
             </View>
         )
     }

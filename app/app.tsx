@@ -48,7 +48,7 @@ function App() {
 
   // Kick off initial async loading actions, like loading fonts and RootStore
   useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       setupRootStore().then(setRootStore)
     })()
   }, [])
@@ -63,11 +63,7 @@ function App() {
   return (
     <RootStoreProvider value={rootStore}>
       <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-        <RootNavigator
-          ref={navigationRef}
-          initialState={initialNavigationState}
-          onStateChange={onNavigationStateChange}
-        />
+        <RootNavigator />
       </SafeAreaProvider>
     </RootStoreProvider>
   )
