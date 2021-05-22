@@ -1,27 +1,19 @@
-import React, { Component } from 'react'
-import { View, Image } from 'react-native'
-
-class splashscreen extends React.Component {
-  constructor(props) {
-    super(props);
-    setTimeout(() => {
-      this.props.navigation.navigate('GetStarted')
-    }, 5000)
-
-
-  }
-  render() {
-      console.log(this.props)
-    return (
-      <View style={{ flex: 1 }}>
-        <Image resizeMode={'stretch'} style={{
-          flex: 1,
-          width: null,
-          height: null
-        }} source={require('../Hotstar/hotstar.jpg')} />
-      </View>
-    )
-  }
+import React, { Component } from "react"
+import { View, Text } from "react-native"
+class SplashScreen extends Component {
+    componentDidMount() {
+        setTimeout(() => {
+            this.props.navigation.navigate('GetStarted')
+        }, 5000);
+    }
+    render() {
+        console.log(this.props)
+        return (
+            <View>
+                <Text>SplashScreen Yo</Text>
+            </View>
+        )
+    }
 }
 
-export default splashscreen
+export default SplashScreen

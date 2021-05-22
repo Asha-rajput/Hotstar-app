@@ -28,10 +28,11 @@ export default function MyTabs() {
             tabBarPosition={'bottom'}
             tabBarOptions={{
                 activeTintColor: 'white',
-                labelStyle: {  textTransform: 'none' ,fontSize: 10, borderBottomWidth: 0 },
+                labelStyle: { textTransform: 'none', fontSize: 10, borderBottomWidth: 0 },
                 // style: { backgroundColor: 'powderblue' ,borderWidth:0,borderBottomColor:'transparent',elevation:0},
                 showIcon: true,
                 tabStyle: { backgroundColor: '#121926', borderWidth: 0, borderBottomColor: 'transparent' },
+                indicatorStyle: { backgroundColor: '#121926' }
 
             }}
         >
