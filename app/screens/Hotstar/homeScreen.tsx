@@ -6,6 +6,8 @@ import SwiperScreen from './SubScreen/swiper'
 import ContinueWatching from './SubScreen/ContinueWatching'
 import { Container } from 'native-base'
 import { getAPI } from '../../services/api/index'
+import AntDesign from 'react-native-vector-icons/AntDesign'
+
 class homeScreen extends React.Component {
     state = {
         trandingMovie: [],
@@ -74,8 +76,13 @@ class homeScreen extends React.Component {
                 <ScrollView>
                     <View style={{ flex: 1, backgroundColor: '#121926' }}>
                         <SwiperScreen {...this.props} />
+                        <View>
+                            <Text style={textLabelStyle}>Trending</Text>
+                            <View style={{ position: 'absolute', right: 10 ,top:20}}>
+                                < AntDesign name='right' color={'gray'} size={18} />
+                            </View>
 
-                        <Text style={textLabelStyle}>Trending</Text>
+                        </View>
                         <ContinueWatching trandingMovie={trandingAll} {...this.props} {...this.state} />
 
                         <Text style={textLabelStyle}>Popular Movies</Text>
