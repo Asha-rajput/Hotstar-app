@@ -3,7 +3,7 @@ import { View, Text } from "react-native"
 class SplashScreen extends Component {
     componentDidMount() {
         setTimeout(() => {
-            this.props.navigation.navigate('welcome')
+            this.props.navigation.navigate('GetStarted')
         }, 5000);
     }
     render() {

@@ -6,8 +6,6 @@ import SwiperScreen from './SubScreen/swiper'
 import ContinueWatching from './SubScreen/ContinueWatching'
 import { Container } from 'native-base'
 import { getAPI } from '../../services/api/index'
-
-
 class homeScreen extends React.Component {
     state = {
         trandingMovie: []
@@ -18,22 +16,20 @@ class homeScreen extends React.Component {
     fetchData = async () => {
         try {
             const res = await getAPI('trending/movie/week')
-            console.log('AAAA RRRRRR===========', JSON.parse(res))
-            if (res && res.results) {
-                this.setState({ trandingMovie: res.results })
+            console.log('AAAA RRRRRR===========', res)
+            if (res && res.data) {
+                this.setState({ trandingMovie: res.data.results })
             }
         } catch (error) {
             console.log('error====>>', error)
         }
     }
     render() {
-        console.log('trandingMovie', trandingMovie)
         const { trandingMovie } = this.state
         return (
             <Container>
                 <View>
                     <Header {...this.props} />
-
                 </View>
                 <ScrollView>
                     <View style={{ flex: 1, backgroundColor: '#121926' }}>
