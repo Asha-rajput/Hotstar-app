@@ -21,20 +21,21 @@ export default class extends Component {
                 <Swiper
                     renderPagination={renderPagination}
                     loop={true}
+                    autoplay={true}
                 >
                     <View>
-                        <ImageBackground style={{ height: '100%', width: '100%', padding: 0 }} source={require('../../Hotstar/p1.jpg')} />
+                        <Image style={{ height: '100%', width: '100%',borderRadius:10}} source={require('../../Hotstar/p1.jpg')} />
                     </View>
                     <View>
-                        <ImageBackground style={{ height: '100%', width: '100%', padding: 0}} source={require('../../Hotstar/p2.jpg')} />
+                        <Image style={{ height: '100%', width: '100%',borderRadius:10}} source={require('../../Hotstar/p2.jpg')} />
 
                     </View>
                     <View>
-                        <ImageBackground style={{ height: '100%', width: '100%', padding: 0}} source={require('../../Hotstar/p3.webp')} />
+                        <Image style={{ height: '100%', width: '100%',borderRadius:10 }} source={require('../../Hotstar/p3.webp')} />
 
                     </View>
                     <View>
-                        <ImageBackground style={{ height: '100%', width: '100%', padding: 0}} source={require('../../Hotstar/p4.jpeg')} />
+                        <Image style={{ height: '100%', width: '100%',borderRadius:10}} source={require('../../Hotstar/p5.jpeg')} />
 
 
 

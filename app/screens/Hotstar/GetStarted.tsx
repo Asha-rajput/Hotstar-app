@@ -6,7 +6,6 @@ import { View, TouchableOpacity, Text } from 'react-native'
 class getStarted extends React.Component {
     
     render() {
-        console.log('AAAA=>>>>>>>', this.props)
         return (
             <View style={{ flex: 1, backgroundColor: '#0C111B', justifyContent: 'center', alignItems: 'center' }}>
                 <TouchableOpacity style={{

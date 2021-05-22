@@ -1,18 +1,68 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity, Text } from 'react-native'
+import { View, TouchableOpacity, Text, ScrollView } from 'react-native'
 // import Swiper from './Components/Swiper.js'
 import Header from './SubScreen/Header'
 import SwiperScreen from './SubScreen/swiper'
+import ContinueWatching from './SubScreen/ContinueWatching'
+import { Container } from 'native-base'
+import { getAPI } from '../../services/api/index'
 
 
 class homeScreen extends React.Component {
+    state = {
+        trandingMovie: []
+    }
+    componentDidMount() {
+        this.fetchData()
+    }
+    fetchData = async () => {
+        try {
+            const res = await getAPI('trending/movie/week')
+            console.log('AAAA RRRRRR===========', JSON.parse(res))
+            if (res && res.results) {
+                this.setState({ trandingMovie: res.results })
+            }
+        } catch (error) {
+            console.log('error====>>', error)
+        }
+    }
     render() {
-        console.log('111111111111111111111111111111111111111')
+        console.log('trandingMovie', trandingMovie)
+        const { trandingMovie } = this.state
         return (
-            <View style={{ flex: 1 }}>
-                <Header {...this.props} />
-                <SwiperScreen {...this.props} />
-            </View>
+            <Container>
+                <View>
+                    <Header {...this.props} />
+
+                </View>
+                <ScrollView>
+                    <View style={{ flex: 1, backgroundColor: '#121926' }}>
+                        <SwiperScreen {...this.props} />
+
+                        <Text style={{ fontSize: 18, color: 'white', fontWeight: '400' }}>Continue Wacthing.....</Text>
+                        <ContinueWatching trandingMovie={trandingMovie} flag={true} {...this.props} />
+
+                        <Text style={{ fontSize: 18, color: 'white', fontWeight: '400' }}>Latest & Trending</Text>
+                        <ContinueWatching {...this.props} />
+
+                        <Text style={{ fontSize: 18, color: 'white', fontWeight: '400' }}>Movies Recommended For You</Text>
+                        <ContinueWatching {...this.props} />
+
+                        <Text style={{ fontSize: 18, color: 'white', fontWeight: '400' }}>Popular shows</Text>
+                        <ContinueWatching {...this.props} />
+
+                        <Text style={{ fontSize: 18, color: 'white', fontWeight: '400' }}>Shows Recommended for You</Text>
+                        <ContinueWatching {...this.props} />
+
+                        <Text style={{ fontSize: 18, color: 'white', fontWeight: '400' }}>Popular Movies</Text>
+                        <ContinueWatching {...this.props} />
+
+                        <Text style={{ fontSize: 18, color: 'white', fontWeight: '400' }}>Live News</Text>
+                        <ContinueWatching {...this.props} />
+
+                    </View>
+                </ScrollView>
+            </Container>
         )
     }
 }

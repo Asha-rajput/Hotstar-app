@@ -10,7 +10,7 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={() => <DrawerScreen />}>
+    <Drawer.Navigator initialRouteName="HomeScreen" drawerContent={(props) => <DrawerScreen {...props} />}>
       <Drawer.Screen name="HomeScreen" component={MyTabs} />
     </Drawer.Navigator>
   );

@@ -1,3 +1,4 @@
+import { hasIn } from 'ramda'
 import React, { Component } from 'react'
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native'
 import AntDesign from 'react-native-vector-icons/AntDesign'
@@ -8,7 +9,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 class DrawerScreen extends React.Component {
 
-
+    closeDrawer() {
+        console.log('==========', this.props.navigation)
+        this.props.navigation.closeDrawer()
+    }
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: '#0C111B' }}>
@@ -20,11 +24,9 @@ class DrawerScreen extends React.Component {
                         fontSize: 18, fontWeight
                             : 'bold', color: 'white'
                     }}>My Account</Text>
-
                     <Text style={{ color: '#AAA', fontSize: 18, paddingBottom: 22 }}>+91 9808102373</Text>
-                    <TouchableOpacity style={{ position: 'absolute', right: 0 }}  onPress={() => this.props.navigation.closeDrawer()}>
+                    <TouchableOpacity style={{ position: 'absolute', right: -20, padding: 10 }} onPress={() => this.closeDrawer()}>
                         < AntDesign name='right' color={'gray'} size={18} />
-
                     </TouchableOpacity>
                 </View>
                 <View style={styles.Viewstyle}>

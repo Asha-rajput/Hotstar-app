@@ -41,7 +41,7 @@ export type PrimaryParamList = {
 // Documentation: https://github.com/software-mansion/react-native-screens/tree/master/native-stack
 const Stack = createNativeStackNavigator<PrimaryParamList>()
 
-export function PrimaryNavigator() {
+export function PrimaryNavigator(props) {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -50,7 +50,7 @@ export function PrimaryNavigator() {
       }}>
       <Stack.Screen name="splashScreen" component={splashscreen} />
       <Stack.Screen name="GetStarted" component={GetStarted} />
-      <Stack.Screen name="Drawer" component={Drawer} />
+      <Stack.Screen name="Drawer" component={Drawer} {...props} />
     </Stack.Navigator>
   )
 }
