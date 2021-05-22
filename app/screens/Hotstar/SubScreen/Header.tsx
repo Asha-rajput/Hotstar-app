@@ -16,7 +16,7 @@ export default class HeaderMultipleIconExample extends Component {
                 </Left>
                 <Body style={{ flex: 3.5 }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-                        <Image resizeMode={'stretch'} style={{ width: 170, height: 35 }} source={require('../../Hotstar/disney-hotstar-logo.png')} />
+                        <Image resizeMode={'stretch'} style={{ width: 170, height: 35 }} source={require('../../Hotstar/Assets/disney-hotstar-logo.png')} />
                         <TouchableOpacity>
                             <Text style={{ fontSize: 12, color: 'blue', borderColor: 'blue', borderWidth: 1, alignSelf: 'center', padding: 1 }}>SUBSCRIBE</Text>
                         </TouchableOpacity>

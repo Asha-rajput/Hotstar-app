@@ -59,7 +59,7 @@ export default function MyTabs() {
                     tabBarLabel: 'Disnep+',
                     tabBarIcon: ({ color }) => (
                         <Image style={{ width: 35, height: 25, resizeMode: 'stretch', alignSelf: 'center' }}
-                            source={require('./../../Hotstar/A2.png')} />
+                            source={require('./../../Hotstar/Assets/A2.png')} />
                     )
 
                 }}

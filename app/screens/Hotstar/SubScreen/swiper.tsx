@@ -22,16 +22,16 @@ export default class extends Component {
                     autoplay={true}
                 >
                     <View>
-                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/p1.jpg')} />
+                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/Assets/p1.jpg')} />
                     </View>
                     <View>
-                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/p2.jpg')} />
+                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/Assets/p2.jpg')} />
                     </View>
                     <View>
-                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/p3.webp')} />
+                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/Assets/p3.webp')} />
                     </View>
                     <View>
-                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/p5.jpeg')} />
+                        <Image style={{ height: '100%', width: '100%', borderRadius: 10 }} source={require('../../Hotstar/Assets/p5.jpeg')} />
                     </View>
                 </Swiper>
             </View>

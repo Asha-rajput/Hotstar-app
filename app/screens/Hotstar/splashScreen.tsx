@@ -14,7 +14,7 @@ class SplashScreen extends Component {
                     flex: 1,
                     width: null,
                     height: null
-                }} source={require('../Hotstar/hotstar.jpg')} />
+                }} source={require('../Hotstar/Assets/hotstar.jpg')} />
             </View>
         )
     }

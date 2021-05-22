@@ -20,7 +20,7 @@ export default class HeaderMultipleIconExample extends Component {
                     </Left>
                     <Body style={{ flex: 3.5}}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-                            <Image resizeMode={'stretch'} style={{ width: 170, height: 40 }} source={require('../../Hotstar/disney-hotstar-logo.png')} />
+                            <Image resizeMode={'stretch'} style={{ width: 170, height: 40 }} source={require('../../Hotstar/Assets/disney-hotstar-logo.png')} />
                                                     </View>
 
                     </Body>
