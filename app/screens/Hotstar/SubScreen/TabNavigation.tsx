@@ -11,6 +11,10 @@ import NewsScreen from './../NewsScreen'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { createNativeStackNavigator } from "react-native-screens/native-stack"
+import ViewScreen from './ViewScreen'
+
+
 
 
 
@@ -20,9 +24,25 @@ const TabBottom = createMaterialTopTabNavigator();
 
 
 // const Tab = createMaterialBottomTabNavigator();
+export const Stack= createNativeStackNavigator()
+
+export function PrimaryNavigator(props) {
+    return (
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+          gestureEnabled: true,
+        }}>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} {...props} />
+        <Stack.Screen name="ViewScreen" component={ViewScreen} {...props} />
+  
+      </Stack.Navigator>
+    )
+  }
 
 export default function MyTabs() {
     return (
+        
         <TabBottom.Navigator
 
             tabBarPosition={'bottom'}
@@ -36,7 +56,7 @@ export default function MyTabs() {
 
             }}
         >
-            <TabBottom.Screen name="Home" component={HomeScreen}
+            <TabBottom.Screen name="Home" component={PrimaryNavigator}
                 options={{
                     tabBarLabel: 'Home',
 

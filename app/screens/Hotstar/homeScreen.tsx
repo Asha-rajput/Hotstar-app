@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TextStyle, Text, ScrollView } from 'react-native'
+import { View, TextStyle, Text, ScrollView ,TouchableOpacity} from 'react-native'
 // import Swiper from './Components/Swiper.js'
 import Header from './SubScreen/Header'
 import SwiperScreen from './SubScreen/swiper'
@@ -78,15 +78,14 @@ class homeScreen extends React.Component {
                         <SwiperScreen {...this.props} />
                         <View>
                             <Text style={textLabelStyle}>Trending</Text>
-                            <View style={{ position: 'absolute', right: 10 ,top:20}}>
+                            <View style={{ position: 'absolute', right: 10, top: 20 }}>
                                 < AntDesign name='right' color={'gray'} size={18} />
                             </View>
 
                         </View>
-                        <ContinueWatching trandingMovie={trandingAll} {...this.props} {...this.state} />
-
+                            <ContinueWatching trandingMovie={trandingAll} {...this.props} {...this.state} />
                         <Text style={textLabelStyle}>Popular Movies</Text>
-                        <ContinueWatching trandingMovie={trandingMovie} {...this.props} />
+                        <ContinueWatching trandingMovie={trandingMovie} {...this.props}/>
 
                         <Text style={textLabelStyle}>Popular TV</Text>
                         <ContinueWatching trandingMovie={trandingTV} {...this.props} />

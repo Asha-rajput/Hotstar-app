@@ -14,6 +14,7 @@ import GetStarted from '../screens/Hotstar/GetStarted'
 // import HomeScreen from '../screens/Hotstar/homeScreen'
 // import Header from '../screens/Hotstar/SubScreen/Header'
 import Drawer from '../screens/Hotstar/SubScreen/Drawer'
+import homeScreen from "../screens/Hotstar/homeScreen"
 
 
 
@@ -51,6 +52,7 @@ export function PrimaryNavigator(props) {
       <Stack.Screen name="splashScreen" component={splashscreen} />
       <Stack.Screen name="GetStarted" component={GetStarted} />
       <Stack.Screen name="Drawer" component={Drawer} {...props} />
+
     </Stack.Navigator>
   )
 }
