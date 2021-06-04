@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity } from 'react-native'
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import { View, TouchableOpacity, Image } from 'react-native'
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
 
 
 
@@ -13,14 +13,15 @@ class ViewScreen extends React.Component {
         console.log(this.props, '111111')
         const { navigation, route } = this.props
         const { itemDetail } = route.params
-        console.log('data', itemDetail)
+        console.log('datayjjgftrtr', itemDetail)
         this.setState({ ItemDetail: itemDetail })
     }
 
     render() {
         const { ItemDetail } = this.state
         return (
-            <Container>
+            // <Container>
+            <View>
                 <Header style={{ backgroundColor: '#121926' }}>
                     <Left style={{ flex: 1 }}>
                         <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flexDirection: 'row', justifyContent: 'center' }}>
@@ -32,12 +33,17 @@ class ViewScreen extends React.Component {
                             </View>
                         </TouchableOpacity>
                     </Left>
-                    <Body style={{ flex: 0 }}>
-                    </Body>
-                    <Right style={{ flex: 0.01 }}>
-                    </Right>
+                    {/* <Body style={{ flex: 0 }}>
+                    </Body> */}
+                    {/* <Right style={{ flex: 0.01 }}>
+                    </Right> */}
                 </Header>
-            </Container>
+                <View style={{ backgroundColor: 'black', height: 250 }}>
+                    <Image style={{ height: '100%', width: '100%' }} source={{ uri: 'ItemDetail.poster_path'  }} />
+                    <Text style={{ position: 'absolute', color: 'white', bottom: 40, left: 10,fontWeight:'bold' }}>Watch First Episode</Text>
+                </View>
+                {/* </Container> */}
+            </View>
         );
     }
 }
