@@ -7,12 +7,14 @@ import TvScreen from '../TvScreen'
 import DisnepScreen from '../DisnepScreen'
 import SportScreen from './../SportScreen'
 import NewsScreen from './../NewsScreen'
+import { TransitionPresets } from '@react-navigation/stack';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 import ViewScreen from './ViewScreen'
+import ViewAllMovies from './ViewAllMovies'
 
 
 
@@ -32,9 +34,13 @@ export function PrimaryNavigator(props) {
         screenOptions={{
           headerShown: false,
           gestureEnabled: true,
+          ...TransitionPresets.ModalSlideFromBottomIOS,
+
         }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} {...props} />
         <Stack.Screen name="ViewScreen" component={ViewScreen} {...props} />
+        <Stack.Screen name="ViewAllMovies" component={ViewAllMovies} {...props} />
+
   
       </Stack.Navigator>
     )

@@ -3,7 +3,7 @@ import { TouchableOpacity, Image, View, Button } from 'react-native'
 import { Container, Header, Left, Body, Right, Icon, Title, Text } from 'native-base';
 // import Feather from 'react-native-vector-icons/Feather';
 import Menu from './Menu'
-import SearchScreen from './SearchScreen'
+import SearchScreen from './SearchIcon'
 
 
 export default class HeaderMultipleIconExample extends Component {

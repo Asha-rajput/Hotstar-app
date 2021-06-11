@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity, Text,ScrollView ,Image,FlatList} from 'react-native'
-// import Swiper from './Components/Swiper.js'
-import Header1 from './SubScreen/Header1'
-import { getAPI } from '../../services/api/index'
+import { View, TouchableOpacity, Image, ImageBackground, FlatList, ScrollView } from 'react-native'
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+import { getAPI } from '../../../services/api/index'
 const imagePath = 'http://image.tmdb.org/t/p/w500/'
 
 
 
-class TvScreen extends React.Component {
+
+class ViewScreen extends React.Component {
     state = {
 
         MovieList: []
 
     }
-    fetchTrendingTV = async () => {
+    fetchRecommendedMovies = async (url) => {
         try {
-            const res = await getAPI('trending/tv/week')
+            const res = await getAPI(url)
             console.log('res,', res)
             if (res && res.data) {
                 this.setState({ MovieList: res.data.results })
@@ -23,10 +23,14 @@ class TvScreen extends React.Component {
         } catch (error) {
         }
     }
+
+
+
     componentDidMount() {
         console.log(this.props, '111111')
-        this.fetchTrendingTV()
-
+        const { navigation, route } = this.props
+        const { apiURL } = route.params
+        this.fetchRecommendedMovies(apiURL)
     }
     renderImages = (item, index) => {
         console.log('vksk',)
@@ -41,11 +45,23 @@ class TvScreen extends React.Component {
 
     render() {
         const { MovieList } = this.state
-console.log('0202020030')
+console.log('0000000',MovieList)
         return (
-            <View style={{ flex: 1 ,backgroundColor:'black'}}>
-                <Header1 {...this.props} />
-                <Text style={{color:'white',fontSize:20,fontWeight:'600',padding:10}}>Tv Screen</Text>
+            <Container style={{ backgroundColor: '#black' }}>
+
+                <Header style={{ backgroundColor: '#121926' }}>
+                    <Left style={{ flex: 1 }}>
+                        <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flexDirection: 'row', justifyContent: 'center' }}>
+                            <Button transparent>
+                                <Icon name='arrow-back' />
+                            </Button>
+                            <View style={{ justifyContent: 'center' }}>
+                                <Title>Movies</Title>
+                            </View>
+                        </TouchableOpacity>
+                    </Left>
+
+                </Header>
                 <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: 'black' }}>
                     <View style={{ flex:1,backgroundColor: 'black' }}>
                         <FlatList
@@ -56,9 +72,9 @@ console.log('0202020030')
                         />
                     </View>
                 </ScrollView>
-            </View>
-        )
+            </Container>
+        );
     }
 }
+export default ViewScreen
 
-export default TvScreen

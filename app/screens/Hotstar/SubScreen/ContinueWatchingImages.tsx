@@ -16,8 +16,8 @@ class ContinueWatching extends React.Component {
         const l = trandingMovie.length;
         return (
             <TouchableOpacity style={{ flex: 1, padding: 5, marginLeft: index == 0 ? 10 : 0, marginRight: index == l - 1 ? 10 : 0 }} onPress={() => this.viewDetails(item)} >
-                <Image style={{ borderRadius: 10, resizeMode: 'stretch', height: 180, width: 135, backgroundColor: '#121926' }}
-                    source={{ uri: item.poster_path ? imagePath + item.poster_path : null }} />
+                <Image style={{ borderRadius: 5, resizeMode: 'stretch', height: 180, width: 120,backgroundColor:'black' }}
+                    source={{ uri: item.file_path ? imagePath + item.file_path : null }} />
             </TouchableOpacity>
         )
     }
@@ -26,6 +26,7 @@ class ContinueWatching extends React.Component {
         return (
             <View style={{ flex: 1 }}>
                 <FlatList
+                // style={{backgroundColor:'black'}}
                     horizontal
                     data={trandingMovie ? trandingMovie : []}
                     keyExtractor={(item, index) => index.toString()}

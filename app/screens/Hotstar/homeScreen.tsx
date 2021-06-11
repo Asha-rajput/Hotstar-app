@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TextStyle, Text, ScrollView ,TouchableOpacity} from 'react-native'
+import { View, TextStyle, Text, ScrollView, TouchableOpacity } from 'react-native'
 // import Swiper from './Components/Swiper.js'
 import Header from './SubScreen/Header'
 import SwiperScreen from './SubScreen/swiper'
@@ -68,6 +68,12 @@ class homeScreen extends React.Component {
         } catch (error) {
         }
     }
+
+    ViewAllMovies = (url) => {
+        this.props.navigation.navigate('ViewAllMovies',{
+            apiURL: url
+        })
+    }
     render() {
         const { trandingMovie, trandingTV, trandingAll, discoverMovies, discoverTV } = this.state
         return (
@@ -78,26 +84,45 @@ class homeScreen extends React.Component {
                         <SwiperScreen {...this.props} />
                         <View>
                             <Text style={textLabelStyle}>Trending</Text>
-                            <View style={{ position: 'absolute', right: 10, top: 20 }}>
+                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/all/week')}>
                                 < AntDesign name='right' color={'gray'} size={18} />
-                            </View>
+                            </TouchableOpacity>
 
                         </View>
-                            <ContinueWatching trandingMovie={trandingAll} {...this.props} {...this.state} />
-                        <Text style={textLabelStyle}>Popular Movies</Text>
-                        <ContinueWatching trandingMovie={trandingMovie} {...this.props}/>
+                        <ContinueWatching trandingMovie={trandingAll} {...this.props} {...this.state} />
 
-                        <Text style={textLabelStyle}>Popular TV</Text>
+                        <View>
+                            <Text style={textLabelStyle}>Popular Movies</Text>
+                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/movie/week')}>
+                                < AntDesign name='right' color={'gray'} size={18} />
+                            </TouchableOpacity>
+                        </View>
+                        <ContinueWatching trandingMovie={trandingMovie} {...this.props} />
+
+                        <View>
+                            <Text style={textLabelStyle}>Popular TV</Text>
+                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/tv/week')}>
+                                < AntDesign name='right' color={'gray'} size={18} />
+                            </TouchableOpacity>
+                        </View>
                         <ContinueWatching trandingMovie={trandingTV} {...this.props} />
-
-                        <Text style={textLabelStyle}>Discover Movies</Text>
+                        <View>
+                            <Text style={textLabelStyle}>Discover Movies</Text>
+                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('discover/movie')}>
+                                < AntDesign name='right' color={'gray'} size={18} />
+                            </TouchableOpacity>
+                        </View>
                         <ContinueWatching trandingMovie={discoverMovies} {...this.props} />
 
-                        <Text style={textLabelStyle}>Discover TV Shows</Text>
+                        <View>
+                            <Text style={textLabelStyle}>Discover TV Shows</Text>
+                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('discover/tv')}>
+                                < AntDesign name='right' color={'gray'} size={18} />
+                            </TouchableOpacity>
+                        </View>
+
                         <ContinueWatching trandingMovie={discoverTV} {...this.props} />
 
-                        <Text style={textLabelStyle}>Popular Movies</Text>
-                        <ContinueWatching trandingMovie={[{}, {}, {}]} {...this.props} />
 
                     </View>
                 </ScrollView>
