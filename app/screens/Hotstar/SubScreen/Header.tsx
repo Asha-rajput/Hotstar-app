@@ -3,7 +3,7 @@ import { TouchableOpacity, Image, View, Button } from 'react-native'
 import { Container, Header, Left, Body, Right, Icon, Title, Text } from 'native-base';
 // import Feather from 'react-native-vector-icons/Feather';
 import Menu from './Menu'
-import SearchScreen from './SearchIcon'
+import MySearchIcon from './SearchIcon'
 
 
 export default class HeaderMultipleIconExample extends Component {
@@ -26,7 +26,7 @@ export default class HeaderMultipleIconExample extends Component {
                     </View>
                 </Body>
                 <Right style={{ flex: 0.4 }}>
-                    <SearchScreen {...this.props} />
+                    <MySearchIcon {...this.props} />
                 </Right>
             </Header>
         );

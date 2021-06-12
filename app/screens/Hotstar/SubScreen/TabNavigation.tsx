@@ -15,6 +15,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 import ViewScreen from './ViewScreen'
 import ViewAllMovies from './ViewAllMovies'
+import MySearchScreen from './SearchScreen'
 
 
 
@@ -40,6 +41,7 @@ export function PrimaryNavigator(props) {
         <Stack.Screen name="HomeScreen" component={HomeScreen} {...props} />
         <Stack.Screen name="ViewScreen" component={ViewScreen} {...props} />
         <Stack.Screen name="ViewAllMovies" component={ViewAllMovies} {...props} />
+        <Stack.Screen name="SearchScreen" component={MySearchScreen} {...props} />
 
   
       </Stack.Navigator>
