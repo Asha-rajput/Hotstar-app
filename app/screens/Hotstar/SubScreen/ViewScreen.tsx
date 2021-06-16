@@ -78,12 +78,12 @@ class ViewScreen extends React.Component {
                 <Header style={{ backgroundColor: '#121926' }}>
                     <Left style={{ flex: 1 }}>
                         <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                            <Button transparent>
+                            <Button onPress={() => this.props.navigation.goBack()} transparent>
                                 <Icon name='arrow-back' />
                             </Button>
-                            <View style={{ justifyContent: 'center' }}>
-                                <Title>{ItemDetail && ItemDetail.name ? ItemDetail.name : ItemDetail.title}</Title>
-                            </View>
+                            <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{ justifyContent: 'center' }}>
+                                <Title style={{color:'#FFF'}}>{ItemDetail && ItemDetail.name ? ItemDetail.name : ItemDetail.title}</Title>
+                            </TouchableOpacity>
                         </TouchableOpacity>
                     </Left>
                     {/* <Body style={{ flex: 0 }}>
@@ -136,7 +136,7 @@ class ViewScreen extends React.Component {
                         <View style={{ flexDirection: 'row', padding: 10 }}>
                             <TouchableOpacity style={ButtonStyling} onPress={() => console.log('vsjdng')} >
                                 <FontAwesome size={20} name='download' color={'#f5f5f5'}></FontAwesome>
-                                <Text style={{ paddingLeft: 10, fontWeight: '400s', color: '#f5f5f5' }}>Download</Text>
+                                <Text style={{ paddingLeft: 10, fontWeight: '400', color: '#f5f5f5' }}>Download</Text>
                             </TouchableOpacity>
 
                             <TouchableOpacity style={ButtonStyling}>

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { View, TextStyle, Text, ScrollView, TouchableOpacity } from 'react-native'
+import React, { Component, Fragment } from 'react'
+import { View, TextStyle, Text, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
 // import Swiper from './Components/Swiper.js'
 import Header from './SubScreen/Header'
 import SwiperScreen from './SubScreen/swiper'
@@ -7,7 +7,7 @@ import ContinueWatching from './SubScreen/ContinueWatching'
 import { Container } from 'native-base'
 import { getAPI } from '../../services/api/index'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-
+import SafeAreaView from "react-native-safe-area-view"
 class homeScreen extends React.Component {
     state = {
         trandingMovie: [],
@@ -70,63 +70,68 @@ class homeScreen extends React.Component {
     }
 
     ViewAllMovies = (url) => {
-        this.props.navigation.navigate('ViewAllMovies',{
+        this.props.navigation.navigate('ViewAllMovies', {
             apiURL: url
         })
     }
     render() {
         const { trandingMovie, trandingTV, trandingAll, discoverMovies, discoverTV } = this.state
         return (
-            <Container style={{ backgroundColor: '#121926' }}>
-                <Header {...this.props} />
-                <ScrollView>
-                    <View style={{ flex: 1, backgroundColor: '#121926' }}>
-                        <SwiperScreen {...this.props} />
-                        <View>
-                            <Text style={textLabelStyle}>Trending</Text>
-                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/all/week')}>
-                                < AntDesign name='right' color={'gray'} size={18} />
-                            </TouchableOpacity>
+            <Fragment>
+                <StatusBar backgroundColor="transparent" barStyle="dark-content" />
+                <SafeAreaView style={{ flex: 1, backgroundColor: '#121926' }}>
+                    <Container style={{ backgroundColor: '#121926' }}>
+                        <Header {...this.props} />
+                        <ScrollView>
+                            <View style={{ flex: 1, backgroundColor: '#121926' }}>
+                                <SwiperScreen {...this.props} />
+                                <View>
+                                    <Text style={textLabelStyle}>Trending</Text>
+                                    < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/all/week')}>
+                                        < AntDesign name='right' color={'gray'} size={18} />
+                                    </TouchableOpacity>
 
-                        </View>
-                        <ContinueWatching trandingMovie={trandingAll} {...this.props} {...this.state} />
+                                </View>
+                                <ContinueWatching trandingMovie={trandingAll} {...this.props} {...this.state} />
 
-                        <View>
-                            <Text style={textLabelStyle}>Popular Movies</Text>
-                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/movie/week')}>
-                                < AntDesign name='right' color={'gray'} size={18} />
-                            </TouchableOpacity>
-                        </View>
-                        <ContinueWatching trandingMovie={trandingMovie} {...this.props} />
+                                <View>
+                                    <Text style={textLabelStyle}>Popular Movies</Text>
+                                    < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/movie/week')}>
+                                        < AntDesign name='right' color={'gray'} size={18} />
+                                    </TouchableOpacity>
+                                </View>
+                                <ContinueWatching trandingMovie={trandingMovie} {...this.props} />
 
-                        <View>
-                            <Text style={textLabelStyle}>Popular TV</Text>
-                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/tv/week')}>
-                                < AntDesign name='right' color={'gray'} size={18} />
-                            </TouchableOpacity>
-                        </View>
-                        <ContinueWatching trandingMovie={trandingTV} {...this.props} />
-                        <View>
-                            <Text style={textLabelStyle}>Discover Movies</Text>
-                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('discover/movie')}>
-                                < AntDesign name='right' color={'gray'} size={18} />
-                            </TouchableOpacity>
-                        </View>
-                        <ContinueWatching trandingMovie={discoverMovies} {...this.props} />
+                                <View>
+                                    <Text style={textLabelStyle}>Popular TV</Text>
+                                    < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('trending/tv/week')}>
+                                        < AntDesign name='right' color={'gray'} size={18} />
+                                    </TouchableOpacity>
+                                </View>
+                                <ContinueWatching trandingMovie={trandingTV} {...this.props} />
+                                <View>
+                                    <Text style={textLabelStyle}>Discover Movies</Text>
+                                    < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('discover/movie')}>
+                                        < AntDesign name='right' color={'gray'} size={18} />
+                                    </TouchableOpacity>
+                                </View>
+                                <ContinueWatching trandingMovie={discoverMovies} {...this.props} />
 
-                        <View>
-                            <Text style={textLabelStyle}>Discover TV Shows</Text>
-                            < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('discover/tv')}>
-                                < AntDesign name='right' color={'gray'} size={18} />
-                            </TouchableOpacity>
-                        </View>
+                                <View>
+                                    <Text style={textLabelStyle}>Discover TV Shows</Text>
+                                    < TouchableOpacity style={{ position: 'absolute', right: 10, top: 25 }} onPress={() => this.ViewAllMovies('discover/tv')}>
+                                        < AntDesign name='right' color={'gray'} size={18} />
+                                    </TouchableOpacity>
+                                </View>
 
-                        <ContinueWatching trandingMovie={discoverTV} {...this.props} />
+                                <ContinueWatching trandingMovie={discoverTV} {...this.props} />
 
 
-                    </View>
-                </ScrollView>
-            </Container>
+                            </View>
+                        </ScrollView>
+                    </Container>
+                </SafeAreaView>
+            </Fragment>
         )
     }
 }
